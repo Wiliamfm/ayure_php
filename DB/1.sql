@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users(
    id SERIAL PRIMARY KEY,
    username VARCHAR(100) UNIQUE NOT NULL,
-   user_password TEXT UNIQUE NOT NULL,
+   user_password TEXT NOT NULL,
    phone VARCHAR(10) UNIQUE,
    user_role INTEGER NOT NULL
 );
