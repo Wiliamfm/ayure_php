@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,3 +17,46 @@
 </head>
 
 <body>
+   <div class="container pb_5">
+      <nav class="navbar navbar-expand-lg bg-light">
+         <div class="container-fluid">
+            <a class="navbar-brand">
+               POV OF WORLD
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav">
+                  <?php
+                  if(isset($_SESSION['is_logged'])){
+                        $username = $_SESSION['username'];
+                  ?>
+                     <li class="nav-item">
+                        <span class="navbar-text">
+                           Bienvenido <?php echo $username; ?>
+                        </span>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="./create_post.php">Crear Post</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="./list_posts.php">Mis Posts</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../controller/logout.php">Cerrar Sesión</a>
+                     </li>
+                  <?php
+                     }else{
+                  ?>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/view/login.php">Ingresar</a>
+                     </li>
+                  <?php
+                     }
+                  ?>
+               </ul>
+            </div>
+         </div>
+      </nav>
+   </div>
