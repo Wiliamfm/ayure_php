@@ -10,14 +10,14 @@ if (!isset($_SESSION['is_logged'])) {
    header("Location: " . "/view/404.php");
    die;
 }
-if (array_key_exists("edit", $_POST)) {
+if (array_key_exists("id", $_GET)) {
    include __DIR__ . "../../controller/post/get.php";
-   $result = getById($_POST['post_id']);
+   $result = getById($_GET['id']);
 ?>
    <div class="container p-5">
       <form method="POST">
          <?php include "../controller/users/edit_post.php"; ?>
-         <?php //include $_SERVER['DOCUMENT ROOT'] . "/controller/users/edit_post.php"; 
+         <?php //include $_SERVER['DOCUMENT ROOT'] . "/controller/users/edit_post.php";
          ?>
          <div class="mb-3">
             <label for="input_title" class="form-label">Título:</label>
