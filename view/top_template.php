@@ -1,5 +1,5 @@
 <?php
-   session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,8 +12,7 @@
       <?php echo $title; ?>
    </title>
    <!-- CSS only -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
@@ -26,8 +25,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav">
                   <?php
-                  if(isset($_SESSION['is_logged'])){
-                        $username = $_SESSION['username'];
+                  if (isset($_SESSION['is_logged'])) {
+                     $username = $_SESSION['username'];
                   ?>
                      <li class="nav-item">
                         <span class="navbar-text">
@@ -41,19 +40,19 @@
                         <a class="nav-link" href="./create_post.php">Crear Post</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="./list_posts.php">Mis Posts</a>
+                        <a class="nav-link" href="./my_posts.php">Mis Posts</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../controller/logout.php">Cerrar Sesión</a>
                      </li>
                   <?php
-                     }else{
+                  } else {
                   ?>
                      <li class="nav-item">
                         <a class="nav-link" href="/view/login.php">Ingresar</a>
                      </li>
                   <?php
-                     }
+                  }
                   ?>
                </ul>
             </div>

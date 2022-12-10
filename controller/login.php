@@ -22,6 +22,7 @@ if(!empty($_POST['btn_submit'])){
                Ya hay una sesion!
             </div>';
       }
+      $_SESSION['id'] = $result['id'];
       $_SESSION['username'] = $username;
       $_SESSION['role'] = $result['user_role'];
       $_SESSION['is_logged'] = True;
@@ -34,4 +35,3 @@ if(!empty($_POST['btn_submit'])){
          </div>';
    }
 }
-?>
