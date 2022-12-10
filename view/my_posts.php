@@ -1,7 +1,7 @@
 <?php $title = "Mis Publicaciones";
 $loginUrl = "login.php";
 $signUpUrl = "../index.php";
-$indexUrl = "/index.php";
+$indexUrl = "index.php";
 $createPostUrl = "./create_post.php";
 $myPostsUrl = "#";
 $logoutUrl = "../controller/logout.php";
@@ -21,11 +21,8 @@ if (!isset($_SESSION['is_logged'])) {
          <div class="card-header">
             <div class="container">
                <?php echo $row['title']; ?>
-               <form method="POST" action="create_post.php">
-                  <input type="hidden" name="post_id" value="<?php echo $row['id'] ?>">
-                  <button type="submit" name="edit">Editar</button>
-                  <button type="submit" name="delete">Eliminar</button>
-               </form>
+               <a href="create_post.php?id=<?php echo $row['id']; ?>">edit</a>
+               <a href="../controller/users/delete_post.php?id=<?php echo $row['id']; ?>">delete<?php echo $row['id']; ?></a>
             </div>
          </div>
          <div class="card-body">
