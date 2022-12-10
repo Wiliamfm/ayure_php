@@ -24,6 +24,15 @@ session_start();
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="<?php echo $indexUrl; ?>">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?php echo $loginUrl; ?>">Ingresar</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?php echo $signUpUrl; ?>">Registro</a>
+                  </li>
                   <?php
                   if (isset($_SESSION['is_logged'])) {
                      $username = $_SESSION['username'];
@@ -34,25 +43,16 @@ session_start();
                         </span>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                        <a class="nav-link" href="<?php echo $createPostUrl; ?>">Crear Post</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="./create_post.php">Crear Post</a>
+                        <a class="nav-link" href="<?php echo $myPostsUrl; ?>">Mis Posts</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="./my_posts.php">Mis Posts</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="../controller/logout.php">Cerrar Sesión</a>
+                        <a class="nav-link" href="<?php echo $logoutUrl; ?>">Cerrar Sesión</a>
                      </li>
                   <?php
-                  } else {
-                  ?>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/view/login.php">Ingresar</a>
-                     </li>
-                  <?php
-                  }
+                  } //else {
                   ?>
                </ul>
             </div>

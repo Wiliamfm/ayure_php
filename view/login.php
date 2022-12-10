@@ -1,4 +1,11 @@
-<?php $title = "Login"; include "./top_template.php"?>
+<?php $title = "Login";
+$loginUrl = "#";
+$signUpUrl = "../index.php";
+$indexUrl = "index.php";
+$myPostsUrl = "my_posts.php";
+$createPostUrl = "create_post.php";
+$logoutUrl = "/controller/logout.php";
+include "./top_template.php" ?>
 <div class="container m-5">
    <h1 class="text-center">Ingreso</h1>
 </div>
@@ -18,4 +25,4 @@
       <button type="submit" class="btn btn-primary" name="btn_submit" value="ok">Ingresar</button>
    </form>
 </div>
-<?php include "./bottom_template.php"?>
+<?php include "./bottom_template.php" ?>

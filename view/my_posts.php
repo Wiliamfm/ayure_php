@@ -1,4 +1,10 @@
-<?php $title = "Publicaciones";
+<?php $title = "Mis Publicaciones";
+$loginUrl = "login.php";
+$signUpUrl = "../index.php";
+$indexUrl = "/index.php";
+$createPostUrl = "./create_post.php";
+$myPostsUrl = "#";
+$logoutUrl = "../controller/logout.php";
 include "./top_template.php";
 if (!isset($_SESSION['is_logged'])) {
    header("Location: " . "/view/401.php");
@@ -13,7 +19,14 @@ if (!isset($_SESSION['is_logged'])) {
    ?>
       <div class="card">
          <div class="card-header">
-            <?php echo $row['title']; ?>
+            <div class="container">
+               <?php echo $row['title']; ?>
+               <form method="POST" action="create_post.php">
+                  <input type="hidden" name="post_id" value="<?php echo $row['id'] ?>">
+                  <button type="submit" name="edit">Editar</button>
+                  <button type="submit" name="delete">Eliminar</button>
+               </form>
+            </div>
          </div>
          <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -23,7 +36,7 @@ if (!isset($_SESSION['is_logged'])) {
                <footer class="blockquote-footer">
                   <?php echo $row['category']; ?>
                   <cite title="Source Title">
-                     <?php echo $row['author'] . " - " . $row['creation_date']; ?>
+                     <?php echo $row['username'] . " - " . $row['creation_date']; ?>
                   </cite>
                </footer>
             </blockquote>

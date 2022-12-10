@@ -1,9 +1,15 @@
 <?php $title = "Registro";
+$loginUrl = "/view/login.php";
+$signUpUrl = "#";
+$indexUrl = "/view/index.php";
+$createPostUrl = "/view/create_post.php";
+$myPostsUrl = "/view/my_posts.php";
+$logoutUrl = "/controller/logout.php";
 include("./view/top_template.php"); ?>
 <?php
 ?>
 <div class="container">
-   <h1 class= "text-center p-5">Registro de Usuario</h1>
+   <h1 class="text-center p-5">Registro de Usuario</h1>
 </div>
 <div class="container">
    <form class="p-3" style="border: solid;" method="POST">
